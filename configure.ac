@@ -19,12 +19,9 @@ AC_USE_SYSTEM_EXTENSIONS
 
 AM_SILENT_RULES([yes])
 
-AX_PTHREAD
-if test "x$ax_pthread_ok" = xno; then
-	AC_MSG_ERROR([$PACKAGE requires pthreads])
-fi
-
-test -z "$PTHREAD_LIBS" && PTHREAD_LIBS="-lpthread"
+AX_PTHREAD(
+	   [PTHREAD_LIBS="-lpthread"],
+	   [AC_MSG_ERROR([$PACKAGE requires pthreads])])
 
 my_CFLAGS="\
 -Wall \
