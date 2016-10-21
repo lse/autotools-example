@@ -16,3 +16,12 @@ example_SOURCES = \
 		  src/thread.h
 
 example_LDADD = $(PTHREAD_LIBS)
+
+TESTS = \
+	tests/test-args \
+	test-example
+
+check_PROGRAMS = \
+		 test-example
+
+test_example_SOURCES = tests/test-example.c

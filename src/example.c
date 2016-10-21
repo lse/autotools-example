@@ -7,7 +7,7 @@ static void usage(void)
 {
 	extern char *__progname;
 
-	fprintf(stderr, "usage: %s args\n", __progname);
+	fprintf(stderr, "usage: %s number\n", __progname);
 	exit(1);
 }
 
