@@ -1,3 +1,4 @@
+EXTRA_DIST =
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 AM_MAKEFLAGS = --no-print-directory
 
@@ -20,6 +21,8 @@ example_LDADD = $(PTHREAD_LIBS)
 TESTS = \
 	tests/test-args \
 	test-example
+
+EXTRA_DIST += tests/test-args
 
 check_PROGRAMS = \
 		 test-example
