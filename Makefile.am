@@ -1,13 +1,12 @@
-EXTRA_DIST =
+EXTRA_DIST = autogen.sh
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 AM_MAKEFLAGS = --no-print-directory
 
 AM_CPPFLAGS = \
 	      -include $(top_builddir)/config.h \
-	      -D_GNU_SOURCE \
 	      -I${top_srcdir}/src
 
-AM_CFLAGS = $(my_CFLAGS)
+AM_CFLAGS = $(my_CFLAGS) $(PTHREAD_FLAGS)
 
 bin_PROGRAMS = example
 
@@ -24,7 +23,6 @@ TESTS = \
 
 EXTRA_DIST += tests/test-args
 
-check_PROGRAMS = \
-		 test-example
+check_PROGRAMS = test-example
 
 test_example_SOURCES = tests/test-example.c
