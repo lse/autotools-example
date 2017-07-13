@@ -15,22 +15,16 @@ AM_INIT_AUTOMAKE([
 ])
 
 AC_PROG_CC_C99
+AC_PROG_CC_STDC
 AC_USE_SYSTEM_EXTENSIONS
+
+AX_COMPILER_FLAGS
 
 AM_SILENT_RULES([yes])
 
 AX_PTHREAD(
 	   [PTHREAD_LIBS="-lpthread"],
 	   [AC_MSG_ERROR([$PACKAGE requires pthreads])])
-
-my_CFLAGS="\
--Wall \
--Wextra \
--pedantic \
--Werror \
-"
-
-AC_SUBST([my_CFLAGS])
 
 AC_CONFIG_HEADERS(config.h)
 AC_CONFIG_FILES([Makefile])

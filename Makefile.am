@@ -6,7 +6,8 @@ AM_CPPFLAGS = \
 	      -include $(top_builddir)/config.h \
 	      -I${top_srcdir}/src
 
-AM_CFLAGS = $(my_CFLAGS) $(PTHREAD_FLAGS)
+AM_CFLAGS = $(WARN_CFLAGS) $(PTHREAD_FLAGS)
+AM_LDFLAGS = $(WARN_LDFLAGS)
 
 bin_PROGRAMS = example
 
