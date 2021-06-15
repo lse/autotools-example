@@ -23,7 +23,7 @@ AM_SILENT_RULES([yes])
 
 AX_PTHREAD(
 	   [PTHREAD_LIBS="-lpthread"],
-	   [AC_MSG_ERROR([$PACKAGE requires pthreads])])
+	   AC_MSG_ERROR([$PACKAGE requires pthreads]))
 
 PKG_CHECK_MODULES([CURL], [libcurl])
 AX_CHECK_OPENSSL()
